@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <style>
+        body
+        {
+            background :#00224B;
+            color: antiquewhite;
+            background-repeat: flex;
+            
+        }
+        #messageContainer {
+            left: 45%;
+            height: 300px; /* Set the height for the div */
+            overflow-y: scroll; /* Enable vertical scrolling */
+            border: 1px solid #ccc; /* Optional: Add border for styling */
+            padding: 10px; /* Optional: Add padding */
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+  <center><h1 style="color:azure;">COMPLAINTS</h1></center>
+   <center> <div id="messageContainer">
+    <!-- Messages will be added here dynamically -->
+    <div id="mescon"></center>
+
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    
+    <script type="module">
+     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+  import { getDatabase ,ref,set,push,onValue} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+        // Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyCLaldcxZk7wTVRIP4g-NeBigK7FK-eLhc",
+  authDomain: "mess-ae33e.firebaseapp.com",
+  databaseURL: "https://mess-ae33e-default-rtdb.firebaseio.com",
+  projectId: "mess-ae33e",
+  storageBucket: "mess-ae33e.appspot.com",
+  messagingSenderId: "419654109502",
+  appId: "1:419654109502:web:c697a1be4c8a160878446f"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+
+        // Get reference to the database
+        const database = getDatabase(app)
+        const messagesRef = ref(database, 'messages');
+        onValue(messagesRef, (snapshot) => {
+    // Handle the snapshot data
+    const data = snapshot.val();
+    const messageContainer = document.getElementById('mescon');
+    console.log(data)
+    // Clear existing messages
+    var i=1;
+    for (let key in data) {
+        const message = data[key];
+        var comp = "COMPLAIN "+ i.toString()
+        const cc = document.createElement('p')
+        cc.textContent = comp
+        const messageElement = document.createElement('p');
+        messageElement.textContent = message.message;
+        messageContainer.append(cc);
+        messageContainer.append(messageElement);
+        i+=1
+    }
+    // Scroll to the bottom of the message container
+});
+        // Function to fetch messages and append them to the message container
+        
+    </script>
+</body>
+</html>

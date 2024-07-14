@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complain Box</title>
+  <style>
+    *{
+      line-height: 2;
+      top: 50;
+      margin: 0;
+      padding: 0%;
+      box-sizing: border-box;
+      font-family: sans-serif;
+      left: 75%;
+    }
+  
+    nav a{
+      position:  relative;
+      font-size: 1.lem;
+      font-weight: 500;
+      color: #5e5c5c;
+      text-decoration: none;
+      padding: 6px 20px;
+      transition: .5s;
+    }
+    nav a:hover{
+      color: #0ef;
+    }
+    nav span{
+      transform: scale(1) translate Y(0);
+      opacity: 1;
+    }
+    p{
+      text-align: center;
+      justify-content: top;
+    }
+
+    h2{
+                text-align: center;
+                
+                color: #faf7f7;
+                font-size: 50px;
+                top: 10;
+                left: 40%;
+                font-family: 'Times New Roman', Times, serif,Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                transform: translateX(-50);
+                line-height:2 ;  
+    }
+    h3{
+            
+            color: #faf7f7;
+            font-family: Amasis MT Pro Medium;
+            font-size: 20px;
+            text-align: center;
+            line-height: 2;
+            left: 40%; 
+        }
+            h4{
+            
+                color: #faf7f7;
+                font-family: sans-serif;
+                font-size: 20px;
+                line-height: 2;
+                left: 10%; 
+            }
+            p{
+            
+            color: #faf7f7;
+            font-family: sans-serif;
+            font-size: 20px;
+            line-height: 2;
+            left: 70%; 
+        }
+          
+        
+        
+    body{
+         background-image: url("re.jpg");
+         justify-content: center;
+         margin: 0;
+         font-family: 'Times New Roman', Times, serif;
+         height: 100vh;
+         align-items: center;
+    }
+
+    button{
+      box-shadow:  0 0 5px cyan,
+      0 0 25px cyan;
+      color: rgb(254, 255, 255);
+      padding: 6px 20px;
+      transition: .5s;
+      background-color: #0ef;
+      font-style: oblique;
+    
+    }
+    button:hover {
+      box-shadow:  0 0 5px cyan,
+      0 0 25px cyan, 0 0 50px cyan,
+      0 0 100px cyan,0 0 200px cyan;
+    }
+    
+  </style>
+</head>
+<body>
+ 
+    <h2 > Complaint Box   </h2>
+    <h3 >In This website you register a compliant to your higher authority.</h3>
+<nav>
+   
+    <a href="startpage.html"> Home<span></span></a>
+    <a href="admin1.html"> About<span></span></a>
+    <a href="#"> contact us<span></span></a>
+  </nav>
+  <center> <h4>Complaint Here</h4></center> 
+  <form  id="product" method="post" name="product" action=""></form>
+     <center><textarea id="box" rows="4" cols="50" name="messageInput"></textarea></center> 
+       <p></p>
+       
+       
+       
+       
+          <center><button  id = "sub" type="submit" >send</button></center>  
+    
+          </form>
+</div>
+<p>
+  This website offers a secure way for employees to submit complaints to senior company officials, guaranteeing data confidentiality and safety.
+</p>
+<p>
+  don't misuse it.
+</p>
+
+ <script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+  import { getDatabase ,ref,set,push} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyCLaldcxZk7wTVRIP4g-NeBigK7FK-eLhc",
+  authDomain: "mess-ae33e.firebaseapp.com",
+  databaseURL: "https://mess-ae33e-default-rtdb.firebaseio.com",
+  projectId: "mess-ae33e",
+  storageBucket: "mess-ae33e.appspot.com",
+  messagingSenderId: "419654109502",
+  appId: "1:419654109502:web:c697a1be4c8a160878446f"
+};
+// Import the functions you need from the SDKs you need
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
+  document.getElementById("sub").addEventListener("click", function () {
+    var s = document.getElementById("box").value;
+    const messageRef = ref(database , '/messages')
+    push(messageRef, {
+      message: s
+    });
+    document.getElementById('box').value = ''
+  });
+
+ </script>
+</body>
+
+
+</html>
