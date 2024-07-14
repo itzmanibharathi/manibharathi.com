@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MANIBHARATHI A Portfolio</title>
+     <!--box icon link-->
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+  <!--remix icon link-->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+<style>
+  html{
+    scroll-behavior: smooth;
+    scroll-snap-type: mandatory;
+    style:"transition: transform 1s ease-in-out-cubic";
+  }
+    h1{
+        color:rgb(0, 255, 157);
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 45px;
+    }
+    span{
+        font-size: 40px;
+        color:rgb(255, 255, 255);
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    h2{
+        font-size: 40px;
+        color:rgba(22, 21, 21, 0);
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    h2::before{
+       content: attr(data-text);
+       position: absolute;
+       top: 38%;
+       left: 0%;
+       width: 0%;
+       height: 50px;
+       color:#1bad89;
+       -webkit-text-stroke: 0vw #161718;
+       border-right: 2px solid #1bad89;
+       overflow: hidden;
+       animation: animate 6s linear infinite;
+    }
+
+    @keyframes animate{
+       0%,10%,100%{
+              width: 0;
+       }
+       70%,95%{
+        width: 74%;
+       }
+    }
+    p{
+        font-size: 20px;
+        color:rgb(255, 255, 255);
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        word-wrap: break-word;
+    }
+  
+
+    h5 {
+    font-size: 20px;
+    color: rgba(80, 76, 76, 0);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    position: relative;
+    overflow: hidden;
+    height: 170px;
+}
+
+h5::before {
+    content: attr(data-text);
+    position: absolute;
+    width: 100%;
+    left: 0%;
+    color: #ffffff;
+    animation: animate 2s linear forwards;
+}
+
+@keyframes animate {
+    0%{
+        width: 0;
+    }
+    100% {
+        width: 100%; 
+    }
+}
+  .port{
+        position: relative;
+        display: flex;
+        flex-direction: row;
+    }
+    body{
+        background-color: rgb(26, 23, 23);
+    }
+    .sbar{
+        position:fixed;
+        height: auto;
+        width: 50%;
+        color: aqua;
+        display:flex ;
+        justify-content: center;
+        z-index: 1;
+    }
+    button{
+    color: rgb(0, 255, 157);
+    border-radius: 20px;
+    color: rgb(254, 255, 255);
+    padding: 6px 20px;
+    transition: .5s;
+    background-color: rgb(0, 255, 157);
+    font-style: oblique;
+    line-height: 1.5;
+    margin-top: 5%;
+}
+    nav a{
+     display: flex;
+     flex-direction: column;
+     line-height: 0.5;
+     position: relative;
+     font-size: 20;
+     font-family: 'Arial Narrow Bold', sans-serif;
+     color: #ffffff;
+     text-decoration: none;
+     padding: 20px 20px;
+     transition: .5s;
+     line-height: 20px;
+   }
+   nav a:hover{
+     color: rgb(0, 255, 157);
+   }
+   nav span{
+     transform: scale(1) translate Y(0);
+     opacity: 1;
+   }
+ 
+   .t1{
+        margin-top:5%;
+        background-color: rgba(26, 23, 23, 0);
+        margin-left: 20%;
+        width: 100%;
+        height: auto;
+        box-shadow: 0 0 10px rgba(0, 0,0,0.5);
+        perspective: 1000px;
+        perspective-origin: 50% 50%;
+        transform-style: preserve-3d;
+        transition: transform 1s;
+    }
+
+  
+    .home{
+        border-radius: 20px;
+        background:rgb(53, 54, 54);
+        position: relative;
+        display: flex;
+        justify-self: space-between;
+        flex-direction: row;
+        align-items: center;
+        width: 900px;
+        height: 500px;
+        padding: 2px;
+        flex-basis: 50%;
+        transition: transform 0.5s ease-in-out;
+    }
+    .home.active{
+      transform: translateX(100%);
+    }
+    .About{
+        flex-basis: 50%;
+        margin-top: 2%;
+        padding: 5px;
+        border-radius: 20px;
+        background:rgb(53, 54, 54);
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        width: 900px;
+        height: 450px;
+        transition: transform 0.5s ease-in-out;
+    }
+    .About.active{
+      transform: translateX(100%);
+    }
+    .con{
+        position: relative;
+        height:auto;
+        margin-left: 4%;
+        display: flex;
+        flex-direction: column;
+    }
+    .about1{
+        display: flex;
+        flex-direction: row;
+        margin-top: 40px;
+    }
+    .container{
+        top: 3%;
+           position:relative;
+           width: 50%;
+           height: auto;
+    }
+    .img-out{
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        border-style: solid;
+        border-color: rgb(0, 255, 157);
+        border-width: 12px ;
+        left: 4%;
+        filter: blur(6px);
+        position: absolute;
+        z-index: 3;
+        margin-top: 4%;
+}
+.img{
+       margin-top: 8%;
+       width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        overflow: hidden;
+        position: relative;
+        left: 8%;
+        z-index: 2;
+}
+.img img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+}
+.img1 {
+    position: relative;
+  width:200px;
+  height: 200px;
+  margin-left: 20px;
+  border-radius: 10px;
+}
+.img1 img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+.Projects{
+        flex-basis: 50%;
+        margin-top: 2%;
+        padding: 20px;
+        border-radius: 20px;
+        background:rgb(53, 54, 54);
+        position: relative;
+        justify-self: space-between;
+        width: 870px;
+        height: 630px;
+    }
+.box2{
+    height: auto;
+    width: 400px;
+    background-color: rgb(96, 98, 99);
+    border-radius: 10px;
+}
+.skills{
+        flex-basis: 50%;
+        margin-top: 2%;
+        padding: 20px;
+        border-radius: 20px;
+        background:rgb(53, 54, 54);
+        position: absolute;
+        width: 870px;
+        height: 650px;
+        display: flex;
+        flex-direction: column;
+    }
+.progress-container {
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.progress-bar {
+  width: 300px;
+  height: 40px; 
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  position: relative;
+  margin-left: 5%;
+}
+
+.progress-label {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  font-size: 14px;
+  margin-top: 5px;
+  color: #333; 
+}
+
+.progress {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(to right, rgb(0, 255, 157), rgb(0, 173, 199));
+  transition: width 0.3s ease;
+}
+.box{
+    height: 250px;
+    width:800px;
+    margin-left: 3%;
+    background-color: rgb(96, 98, 99);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+}
+.box1{
+    display: flex;
+    flex-direction: row;
+}
+.Contact{
+        margin-top: 80%;
+        border-radius: 20px;
+        background:rgb(53, 54, 54);
+        height: 600px;
+        width: 910px;
+    }
+    input{
+      width: 300px;
+      padding: 5px;
+      margin:  auto;
+      box-sizing: border-box;
+      border-style: solid;
+      color: #000000;
+      border-radius: 5px;
+      flex: none;
+    }
+    .scolumn{
+      margin-top: 5%;
+      display: flex;
+      flex-direction: column;
+      height:500px;
+      width: 300px;
+    }
+    .icons{
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        color: #ffffff;
+        z-index:3;
+        background-color: #f2f2f2;
+    }
+
+    .social-media a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #09f386;
+    font-size: 20px;
+    color:   #02ff96;
+    text-decoration: none;
+
+    top : 10;
+    left: 0.5%;
+    position: relative;
+    border-radius: 50%;
+   }
+  .social-media a:hover {
+    background:   rgb(3, 241, 190);
+    color: black;
+    box-shadow: 0 0 20px  rgb(255, 255, 255)  
+}
+
+</style>
+<body>
+<div class="port" id="port">
+ <div class="sbar" id="sbar" style="background-color: rgba(1, 15, 15, 0.534);height:300px;width: 10%;margin-top: 12%;border-radius: 10px;">
+        <nav>
+            <a href="#home"> Home<span></span></a>
+            <a href="#About"> About<span></span></a>
+            <a href="#Projects">Projects<spans></spans></a>
+            <a href="#skills"> Skills<span></span></a>
+            <a href="#Contact"> Contact<span></span></a>
+           </nav>
+        </div>
+<div class="3con" id="3con">
+  <section class="t1" id="t1">
+    <section class="home" data-aos="fade-in" id="home">
+      <div class="con" id="con">
+       <h1>Hi I'm</h1>
+       <h2 data-text="MANIBHARATHI A">MANIBHARATHI A </h2>
+        <p>"I am a Computer Science and Engineering student interested in web development ."</p>
+        <div class="social-media" id="social-media">
+            <a href="https://www.instagram.com/itzmanibharathi?igsh=aGdoZGs3ZzUwcTk0"><i class='bx bxl-instagram'></i></a>
+              <a href="https://www.linkedin.com/in/manibharathi-a-aa3b612a2?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class='bx bxl-linkedin'></i></a>
+              <a href="https://github.com/itzmanibharathi/manibharathi.com.git"><i class='bx bxl-github'></i></a>
+   </div>
+        <a href="mp r.jpg" download="CV - MANIBHARATHI  A.pdf"><button>My Resume</button></a>
+    </div>
+      <div class="container" id="container">
+            <div class="img-out" id="img-out"></div>
+            <img src="myimg.jpeg" class="img">
+    </div>    
+      
+    </section>
+
+    <section class="About" id="About">
+       <div class="con" id="con" data-aos="fade-down">
+       <h1>About Me</h1> 
+       <span> Computer science engineering student</span>
+       <div class="about1" id="about1">
+           <div class="img1" id="img1" >
+               <img src="abouti.jpeg" ></div>
+           <h5 style="margin-left:30px;" data-text="  As a undergraduate student pursuing a degree in Computer Science Engineering (CSE), I am eager to expand my skills set and knowledge in Artifical Intelligent and Frontend Development. I'm commited to expanding my skills set and exploring innovative technologies to drive my academic and professional growth. ">
+           As a undergraduate student pursuing a degree in Computer Science Engineering (CSE), I am eager to expand my skills set and knowledge in Artifical Intelligent and Frontend Development. I'm commited to expanding my skills set and exploring innovative technologies to drive my academic and professional growth.
+           </h5>    
+   </div> </div>
+   </section>
+
+   <section class="Projects" id="Projects">
+       <h1 style="margin-left: 40%;">Projects</h1>
+       <div class="box2" id="box2">
+           <span style="margin-left: 20%;"> Complaint Box</span>
+       <img src="pp3.JPG" style=" width: 300px;height:350px;object-fit: cover; margin-left:10%;margin-top: 10%;">
+             <nav id="nav">
+             <a href="https://neccomplain.netlify.app/startpage.html"> Click Here to Visit →<span></span></a>
+           </nav>
+       </div>
+   </section>
+   <section class="skills" id="skills">
+       <h1 style="margin-left: 40%;">Skills</h1>
+       <span style="margin-left: 3%;">Programming Skills</span>
+         <div class="progress-container">
+          <div class="progress-bar">
+         <p class="progress-label">Python</p>
+        <div class="progress" style="width: 80%;"></div>
+         </div><br>
+         <div class="progress-bar">
+         <p class="progress-label">C++</p>
+         <div class="progress" style="width: 60%;"></div>
+         </div><br>
+         <div class="progress-bar">
+         <p class="progress-label">C</p>
+         <div class="progress" style="width: 70%;"></div>
+         </div><br>
+         <div class="progress-bar">
+           <p class="progress-label">Photoshop</p>
+           <div class="progress" style="width: 90%;"></div>
+           </div><br>
+           <div class="progress-bar">
+           <p class="progress-label">HTML & CSS</p>
+           <div class="progress" style="width: 80%;"></div>
+           </div><br>
+       </div>
+         <div class="box1" id="box1">
+           <div class="box" id="box">
+               <span>Accenture</span>
+                 <nav>
+                   <a href="ACCENTURE DEVELOPER MANIBHARATHI A.pdf">Developer Management<span></span></a>
+                   <a href="ACCENTURE DEVELOPER MANIBHARATHI A.pdf">Project Management<span></span></a>
+                   <a href="ACCENTURE DEVELOPER MANIBHARATHI A.pdf"> Data analytics and visulization<span></span></a>
+                 </nav>
+               <span>Cognizant</span>
+                 <nav>
+                   <a href="Cognizant AGILE  Intership certificate MANIBHARATHI  A.pdf">Agile Methodology <span></span></a>
+                   <a href="Cognizant AI Intership certificate MANIBHARATHI  A.pdf">Artificial Intelligence<span></span></a>
+                 </nav>
+               <span>TCS</span>
+                 <nav>
+                   <a href="TATA INTERSHIP MANIBHARATHI A.pdf" style="line-height: 20px;" >Data Visualisation: Empowering Business
+                       with Effective Insights <span></span></a>
+                   <a href="TCS ESG INTERSHIP MANIBHARATHI A.pdf">ESG<span></span></a>
+                 </nav>
+             </div>
+            </div>  
+   </section>   
+ <section class="Contact" id="Contact">
+  <center><h1 style="margin-top: 5%;">Contact Me</h1></center>
+ <form action="https://api.web3forms.com/submit" method="POST">
+   <input type="hidden" name="access_key" value="0e66d216-a972-4b08-8d98-e6e957e779a6">
+
+   <center><input type="text" name="name" placeholder="Your Name" required><br>
+     <input type="email" name="email" placeholder="Your Email" required><br>
+     <textarea name="message" placeholder="Your Message" required cols="40" rows="10"></textarea><br></br>
+     <button type="submit">Send Message</button></center>
+     <p style="margin-left: 5%;">Email: amanibharathi2006@gmail.com</p>
+     <p style="margin-left: 5%;">Phone: 8838154112</p>
+   
+</form>
+</section>
+ </section>   
+</div>
+</div>   
+</body>
+</html>
